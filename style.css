@@ -12,7 +12,7 @@ header{
 }
 
 header h1 {
-  font-size: 2.5em;
+  font-size: 40px;
   margin-top: 20px;
 }
 
@@ -134,7 +134,7 @@ form button {
   color: white;
   border: none;
   padding: 10px 20px;
-  font-size: 1em;
+  font-size: 16px;
   cursor: pointer;
   border-radius: 4px;
   transition: background 0.3s;
@@ -159,7 +159,7 @@ footer {
 /* Phone (0 - 576px) */
 @media (max-width: 576px) {
   header h1 {
-    font-size: 1.5em;
+    font-size: 24px;
   }
 
   nav ul {
@@ -180,14 +180,14 @@ footer {
   }
 
   form input, form button {
-    font-size: 1em;
+    font-size: 16px;
   }
 }
 
 /* Tablet (577px - 768px) */
 @media (min-width: 577px) and (max-width: 768px) {
   header h1 {
-    font-size: 2em;
+    font-size: 32px;
   }
 
   nav ul {
@@ -208,14 +208,14 @@ footer {
   }
 
   form input, form button {
-    font-size: 1em;
+    font-size: 16px;
   }
 }
 
 /* Laptop (769px - 1200px) */
 @media (min-width: 769px) and (max-width: 1200px) {
   header h1 {
-    font-size: 2.2em;
+    font-size: 35px;
   }
 
   nav ul {
@@ -235,7 +235,7 @@ footer {
   }
 
   form input, form button {
-    font-size: 1em;
+    font-size: 16px;
   }
 }
 
