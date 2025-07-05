@@ -141,14 +141,44 @@
         <p>Bumi adalah rumah kita bersama. Sudah saatnya kita bertanggung jawab atas keberlanjutannya, tidak hanya untuk kita yang hidup hari ini, tetapi juga untuk generasi yang akan datang. Mari kita rawat, lindungi, dan cintai bumi ini karena masa depannya, ada di tangan kita.</p>
 </p>
     </div>
+        <section id="carbon-calculator">
+                <h2>Kalkulator Jejak Karbon (CO₂)</h2>
+                <p>Perkirakan emisi CO₂ tahunan Anda dari aktivitas harian berikut:</p>
+                <form id="carbon-form">
+                    <label>Jarak kendaraan per minggu (km):
+                        <input type="number" id="jarak" placeholder="Contoh: 50" required>
+                    </label><br><br>
+                    <label>Pemakaian listrik per bulan (kWh):
+                        <input type="number" id="listrik" placeholder="Contoh: 250" required>
+                    </label><br><br>
+                    <button type="submit">Hitung Jejak Karbon</button>
+                    <p id="hasil-co2" style="color: darkgreen; font-weight: bold;"></p>
+                </form>
+            </section>
+            <br>
+            <h2>Hubungi Kami</h2>
+            <form id="contact-form">
+                <label>Nama : <input type="text" id="nama" placeholder="Masukan Nama Anda" required></label><br><br>
+                <label>Email : <input type="email" id="email" placeholder="Masukan Email Anda" required></label><br><br>
+                <button type="submit">Kirim</button>
+                <p id="hasil" style="color: green;"></p>
+            </form>
 </main>
     
     <footer>
         <p>&copy; Bumi Kita, Tanggung Jawab Kita.</p>
     </footer>
 
-        <script>
-            document.getElementById('carbon-form').addEventListener('submit', function(e) {
+      <script>
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const nama = document.getElementById('nama').value;
+                const email = document.getElementById('email').value;
+            document.getElementById('hasil').textContent = `Terima kasih, ${nama}! Kami akan menghubungi Anda di ${email}.`;
+            this.reset();
+        });
+
+        document.getElementById('carbon-form').addEventListener('submit', function(e) {
             e.preventDefault(); 
             const jarak = parseFloat(document.getElementById('jarak').value);
             const listrik = parseFloat(document.getElementById('listrik').value);
@@ -159,27 +189,7 @@
             const totalEmisiTahunan = emisiKendaraanTahunan + emisiListrikTahunan;
             document.getElementById('hasil-co2').textContent =
                 `Total estimasi emisi CO₂ Anda: ${totalEmisiTahunan.toFixed(2)} kg/tahun.`;
-        });        
-
-        document.addEventListener('DOMContentLoaded', () => {
-        const form = document.createElement('form');
-        form.innerHTML = `
-            <h2>Hubungi Kami</h2>
-            <label>Nama : <input type="text" id="nama" placeholder="Masukan Nama Anda" required></label><br><br>
-            <label>Email : <input type="email" id="email" placeholder="Masukan Email Anda" required></label><br><br>
-            <button type="submit">Kirim</button>
-            <p id="hasil" style="color: green;"></p>
-        `;
-        document.querySelector('.main-content').appendChild(form);
-    
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const nama = document.getElementById('nama').value;
-            const email = document.getElementById('email').value;
-            document.getElementById('hasil').textContent = `Terima kasih, ${nama}! Kami akan menghubungi Anda di ${email}.`;
-            form.reset();
         });
-    });
     </script>
 </body>
 </html>
