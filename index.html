@@ -147,7 +147,21 @@
         <p>&copy; Bumi Kita, Tanggung Jawab Kita.</p>
     </footer>
 
-        <script>document.addEventListener('DOMContentLoaded', () => {
+        <script>
+            document.getElementById('carbon-form').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            const jarak = parseFloat(document.getElementById('jarak').value);
+            const listrik = parseFloat(document.getElementById('listrik').value);
+            const emisiPerKmKendaraan = 0.192;
+            const emisiPerKwhListrik = 0.85;  
+            const emisiKendaraanTahunan = jarak * 52 * emisiPerKmKendaraan;
+            const emisiListrikTahunan = listrik * 12 * emisiPerKwhListrik; 
+            const totalEmisiTahunan = emisiKendaraanTahunan + emisiListrikTahunan;
+            document.getElementById('hasil-co2').textContent =
+                `Total estimasi emisi CO₂ Anda: ${totalEmisiTahunan.toFixed(2)} kg/tahun.`;
+        });        
+
+        document.addEventListener('DOMContentLoaded', () => {
         const form = document.createElement('form');
         form.innerHTML = `
             <h2>Hubungi Kami</h2>
