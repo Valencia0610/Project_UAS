@@ -272,3 +272,36 @@ nav ul li a {
 nav ul li a:hover {
   background-color: #2e7d32;
 }
+
+form h2, #carbon-calculator h2 {
+  margin-bottom: 15px;
+  color: #2e7d32; 
+}
+
+form label, #carbon-calculator label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+form input, #carbon-calculator input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button, #carbon-calculator button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+form button:hover, #carbon-calculator button:hover {
+  background-color: #388e3c;
+}
